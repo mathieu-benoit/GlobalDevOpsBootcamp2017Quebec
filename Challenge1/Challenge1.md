@@ -48,26 +48,26 @@ In this first excercise you will create a repo for the application code.
 
 ## Achievements ## 
 
-| # | Achievement   | Maximum score |
-|---|---------------|---------------|
-|1| Configure a build agent|50|
-|2| Create the server environment|100|
-|3| Update the application to use the Azure SQL database | 50 |
-|4| Set up a build pipeline that builds the web application in to a MSDeploy package | 50 |
-|5| Set up a release pipeline that publishes the application to production | 50 |
-|6| Deploy a change in the website with Continuous Deployment | 50 | 
+| # | Achievement   |
+|---|---------------|
+|1| Configure a build agent|
+|2| Create the server environment|
+|3| Update the application to use the Azure SQL database |
+|4| Set up a build pipeline that builds the web application in to a MSDeploy package |
+|5| Set up a release pipeline that publishes the application to production |
+|6| Deploy a change in the website with Continuous Deployment |
 
 ## Bonus goals ##
 
-| # | Bonus goal   | Maximum score |
-|---|---------------|---------------|
-|1| Add an extra stage to the release pipeline that uses a deployment slot|50|
-|2| Create a backlog with work and a task board with tasks|50|
-|3| Set up some usage counters with Application Insights in the website|100|
-|4| Create a feature toggle that "reveals" new functionality|100|
-|5| Use configuration to inject the connection string for the application during deployment|50|
-|6| Use an ARM template to configure and deploy the website and database in Azure|100|
-|7| Use approvers to create a controlled deployment pipeline|50|
+| # | Bonus goal   |
+|---|---------------|
+|1| Add an extra stage to the release pipeline that uses a deployment slot|
+|2| Create a backlog with work and a task board with tasks|
+|3| Set up some usage counters with Application Insights in the website|
+|4| Create a feature toggle that "reveals" new functionality|
+|5| Use configuration to inject the connection string for the application during deployment|
+|6| Use an ARM template to configure and deploy the website and database in Azure|
+|7| Use approvers to create a controlled deployment pipeline|
 
 ## Achievement \#1 - Configure a build agent ##
 For this workshop we will use local build servers. In this step you will setup a local 

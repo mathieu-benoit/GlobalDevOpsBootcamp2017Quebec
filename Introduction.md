@@ -6,7 +6,6 @@ Besided the challenges, there are also some Bonus Goals you can do, which will g
 
 Summarized, this is what you are going to do!
 
-* Create a group of 3-5 people
 * Read the challenges
 * Divide the work amongst your group. It is highly recommended to finish a challenge together, before picking up a new one.
 * Create a 5 minute demo presentation, highlighting the solution you created
@@ -30,27 +29,27 @@ In this challenge, you will move the current monolith application towards the cl
 
 ### Challenge \#1 - Achievements ### 
 
-| # | Achievement   | Maximum score |
-|---|---------------|---------------|
-|1| Configure a build agent|50|
-|2| Create the server environment|100|
-|3| Update the application to use the Azure SQL database | 50 |
-|4| Set up a build pipeline that builds the web application in to a MSDeploy package | 50 |
-|5| Set up a release pipeline that publishes the application to production | 50 |
-|6| Deploy a change in the website with Continuous Deployment | 50 | 
+| # | Achievement   |
+|---|---------------|
+|1| Configure a build agent|
+|2| Create the server environment|
+|3| Update the application to use the Azure SQL database |
+|4| Set up a build pipeline that builds the web application in to a MSDeploy package |
+|5| Set up a release pipeline that publishes the application to production |
+|6| Deploy a change in the website with Continuous Deployment |
 
 ### Challenge \#1 - Bonus Goals ###
 
-| # | Bonus Goal   | Maximum score |
-|---|---------------|---------------|
-|1| Add an extra stage to the release pipeline that uses a deployment slot|50|
-|2| Create a backlog with work and a task board with tasks|50|
-|3| Set up some usage counters with Application Insights in the website|100|
-|4| Create a feature toggle that "reveals" new functionality|100|
-|5| Use configuration to inject the connection string for the application during deployment|50|
-|6| Use an ARM template to configure and deploy the website and database in Azure|100|
-|7| Use approvers to create a controlled deployment pipeline|50|
-|8| Set up automatic scaling for your Azure Web App from the portal, create a load test to prove it works |150 |
+| # | Bonus Goal   |
+|---|---------------|
+|1| Add an extra stage to the release pipeline that uses a deployment slot|
+|2| Create a backlog with work and a task board with tasks|
+|3| Set up some usage counters with Application Insights in the website|
+|4| Create a feature toggle that "reveals" new functionality|
+|5| Use configuration to inject the connection string for the application during deployment|
+|6| Use an ARM template to configure and deploy the website and database in Azure|
+|7| Use approvers to create a controlled deployment pipeline|
+|8| Set up automatic scaling for your Azure Web App from the portal, create a load test to prove it works |
 
 ## Challenge \#2 - Moving to containers ##
 The management of Musicamente has just visited a Gartner conference. They learned about cloud tehcnology and came to the conclusion that running a website on PaaS (Azure WebApp) might result in a vendor lock-in. For the website they want to be able to be cloud-agnostic and switch between different clouds or even back to on-premises. 
@@ -63,26 +62,26 @@ When you succesfully completed the challenge, your Azure Website runs in a Docke
 
 ### Challenge \#2 - Achievements ### 
 
-|#| Achievement   | Maximum score |
-|---|---------------|:---------------:|
-|1| Configure a build agent | 100 |
-|2| Create a Dockerfile and build a local Docker image with the webapplication installed | 100 |
-|3| Set up an Azure Container Registry | 50 |
-|4| Create a build definition for your containerized application | 100 |
-|5| Set up a release pipeline that consumes the container from your Azure Container Registry | 150 |
+|#| Achievement   |
+|---|---------------|
+|1| Configure a build agent |
+|2| Create a Dockerfile and build a local Docker image with the webapplication installed |
+|3| Set up an Azure Container Registry |
+|4| Create a build definition for your containerized application |
+|5| Set up a release pipeline that consumes the container from your Azure Container Registry |
 
 ### Challenge \#2 - Bonus Goals ###
-| # | Bonus Goal | Maximum Score |
-|---|---------------|:---------------:|
-| 1 | Containerize SQL server and connect it to the webapplication container (with docker compose) | 50 |
-| 2 | Deploy your image from a release pipeline to the Kubernetes cluster  | 50 |
-| 3 | Incorporate (a few) unit tests and run them from the build | 50 |
-| 4 | Clean-up environment after release | 25 |
-| 5 | Make sure pipeline can deploy if the previous release failed | 25 |
-| 6 | Setup continuous deployments | 25 |
-| 7 | Add an additional environment | 25 |
-| 8 | Integrate UI tests (Selenium or CodedUI) | 50 |
-| 9 | Setup and Use Kubernetes  to run your container and let your Azure WebApp website use this. | 250 | 
+| # | Bonus Goal |
+|---|---------------|
+| 1 | Containerize SQL server and connect it to the webapplication container (with docker compose) |
+| 2 | Deploy your image from a release pipeline to the Kubernetes cluster  |
+| 3 | Incorporate (a few) unit tests and run them from the build |
+| 4 | Clean-up environment after release |
+| 5 | Make sure pipeline can deploy if the previous release failed |
+| 6 | Setup continuous deployments |
+| 7 | Add an additional environment |
+| 8 | Integrate UI tests (Selenium or CodedUI) |
+| 9 | Setup and Use Kubernetes  to run your container and let your Azure WebApp website use this. |
 
 ## Challenge \#3 - Moving to serverless ##
 Musicamente wants to make the User Experience better by sending SMS verification after checking out the shopping cart. At this moment there is no capacity of hsoting a service like this in-house. Important requirement from the business is that they only want to pay for this feature if it is really used. 
@@ -93,24 +92,24 @@ In this challenge, you will create a new Azure Serverless Function, and make thi
 
 ### Challenge \#3 - Achievements ### 
 
-|#| Achievement   | Maximum score |
-|---|---------------|:---------------:|
-| 1 | Create an Azure Function and expose the functionality | 100 |
-| 2 | Update your website to use the service and show data in the UI | 50 |
-| 3 | Create an ARM template and package to publish your Azure Function + Infra  automatically| 150 |
-| 4 | Create a release pipeline for your Azure Function | 100 |
-| 5 | Publish all updates automatically | 50 | 
+|#| Achievement   |
+|---|---------------|
+| 1 | Create an Azure Function and expose the functionality |
+| 2 | Update your website to use the service and show data in the UI |
+| 3 | Create an ARM template and package to publish your Azure Function + Infra  automatically|
+| 4 | Create a release pipeline for your Azure Function |
+| 5 | Publish all updates automatically |
 
 #### Challenge \#3 - Bonus Goals ####
-| # | Bonus Goal | Maximum Score |
-|-----------|-------| --------------|
-| 1 | Add API Management to version your Serverless function | 150 |
+| # | Bonus Goal |
+|-----------|-------|
+| 1 | Add API Management to version your Serverless function |
 
 ## Extra Bonuses ##
 A few extra bonuses can be earned if applied to the Challenges.
 
-| Challenge | Bonus | Maximum Score |
-|-----------|-------| --------------|
-| Any | Create a backlog with work and a task board with tasks | 25 |
-| Any | Set up some usage counters with Application Insights in the website | 50 |
-| Any | Create a feature toggle that "reveals" new functionality | 50 |
+| Challenge | Bonus |
+|-----------|-------|
+| Any | Create a backlog with work and a task board with tasks |
+| Any | Set up some usage counters with Application Insights in the website |
+| Any | Create a feature toggle that "reveals" new functionality |

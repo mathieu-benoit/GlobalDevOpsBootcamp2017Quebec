@@ -31,26 +31,26 @@ When you succesfully completed the challenge, your webapplication is running in 
 * Clone or download the files for challenge 2 from [https://github.com/GlobalDevOpsBootcamp/challenge2](https://github.com/GlobalDevOpsBootcamp/challenge2)  
 
 ## Achievements ##
-|#| Achievement   | Maximum score |
-|---|---------------|:---------------:|
-|1| Configure a build agent | 25 |
-|2| Create a Dockerfile and build a local Docker image with the webapplication installed | 50 |
-|3| Set up an Azure Container Registry | 25 |
-|4| Create a build definition for your containerized application | 50 |
-|5| Set up a release pipeline that consumes the container from your Azure Container Registry | 50 |
+|#| Achievement   |
+|---|---------------|
+|1| Configure a build agent |
+|2| Create a Dockerfile and build a local Docker image with the webapplication installed |
+|3| Set up an Azure Container Registry |
+|4| Create a build definition for your containerized application |
+|5| Set up a release pipeline that consumes the container from your Azure Container Registry |
  
 
 ## Bonus Goals ##
-|#| Bonus Goal   | Maximum score |
-|---|---------------|:---------------:|
-|1| Containerize SQL server and connect it to the webapplication container (with docker compose) | 50 |
-|2| Incorporate unit tests | 25 |
-|3| Clean-up environment after release | 25 |
-|4| Make sure pipeline can deploy if the previous release failed | 25 |
-|5| Setup continuous deployments | 25 |
-|6| Add an additional environment | 25 |
-|7| Integrate Coded tests | 50 |
-|8| Setup and Use Kubernetes to run your container and let your Azure WebApp website use this. | 200 |
+|#| Bonus Goal   |
+|---|---------------|
+|1| Containerize SQL server and connect it to the webapplication container (with docker compose) |
+|2| Incorporate unit tests |
+|3| Clean-up environment after release |
+|4| Make sure pipeline can deploy if the previous release failed |
+|5| Setup continuous deployments |
+|6| Add an additional environment |
+|7| Integrate Coded tests |
+|8| Setup and Use Kubernetes to run your container and let your Azure WebApp website use this. |
 
 ## Achievement \#1 - Configure a build agent ##
 

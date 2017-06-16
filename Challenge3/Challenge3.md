@@ -25,12 +25,12 @@ When you succesfully completed the challenge, you can build and release an Azure
 * Clone or download the files for challenge 3 from [https://github.com/GlobalDevOpsBootcamp/challenge3](https://github.com/GlobalDevOpsBootcamp/challenge3)
 
 ## Achievements ##
-|#| Achievement   | Maximum score |
-|---|---------------|:---------------:|
-|1| Add an Azure function application in the Azure portal and use this in your Web Application | 50 |
-|2| Configure a VSTS Build process | 50 |
-|3| Configure a VSTS Release pipeline | 50 |
-|4| Deploy the application | 50 |
+|#| Achievement   |
+|---|---------------|
+|1| Add an Azure function application in the Azure portal and use this in your Web Application |
+|2| Configure a VSTS Build process |
+|3| Configure a VSTS Release pipeline |
+|4| Deploy the application |
 
 ## Achievement 1 Add an Azure function application in the Azure portal and use this in your Web Application##
 
