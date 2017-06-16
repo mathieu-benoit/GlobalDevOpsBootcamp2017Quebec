@@ -1,4 +1,5 @@
 # DevOps Challenge \#2 #
+
 In this challenge, you will move the ASP.NET application to a Docker container. 
 After you have created and tested the image locally, you will set up an Azure Container Registry and use the build pipeline
 to build and publish the image to this registry.
@@ -23,12 +24,12 @@ When you succesfully completed the challenge, your webapplication is running in 
 *   Participants need administrator rights to add new service end-points in VSTS 
 *   Azure Database for ASP.NET Music Store (created in Challenge 1)
 *   Docker Integration VSTS extension from the Azure Marketplace
-*   Base Docker image downloaded (pulled) for achievements  ```docker pull microsoft/aspnet```
+*   Base Docker image downloaded (already pulled for you) for achievements  ```docker pull microsoft/aspnet```
 
 ## Getting started ##
 * [Verify the Docker installation and explore the application](https://docs.docker.com/docker-for-windows/#check-versions-of-docker-engine-compose-and-machine)
 * Clone the started code from [https://github.com/GlobalDevOpsBootcamp/challenge1](https://github.com/GlobalDevOpsBootcamp/challenge1) to your VSTS project as described in challenge1
-* Clone or download the files for challenge 2 from [https://github.com/GlobalDevOpsBootcamp/challenge2](https://github.com/GlobalDevOpsBootcamp/challenge2)  
+* Download for challenge 2: [Dockerfile](./Dockerfile) + [associated Provisioning/docker folder](./Provisioning/Docker) and nested files.  
 
 ## Achievements ##
 |#| Achievement   |
@@ -38,7 +39,6 @@ When you succesfully completed the challenge, your webapplication is running in 
 |3| Set up an Azure Container Registry |
 |4| Create a build definition for your containerized application |
 |5| Set up a release pipeline that consumes the container from your Azure Container Registry |
- 
 
 ## Bonus Goals ##
 |#| Bonus Goal   |
@@ -54,7 +54,7 @@ When you succesfully completed the challenge, your webapplication is running in 
 
 ## Achievement \#1 - Configure a build agent ##
 
-###Download a build agent
+### Download a build agent ###
 * Navigate to your VSTS environment
 * Login with the provided GDBC account
 * Goto VSTS administration functionalities by clicking on the gear icon
@@ -63,13 +63,13 @@ When you succesfully completed the challenge, your webapplication is running in 
 * Create folder on local machine C:\VSTSAgent
 * Extract the files from the downloaded agent zip to this folder
 
-###Generate a PAT token (required when installing a build agent)###
+### Generate a PAT token (required when installing a build agent) ###
 * Click on your profile icon in VSTS
 * Click on Security
 * Choose to add a new PAT token to your list of Personal Access Tokens and select the correct scopes (Agent Pools (read, manage), Build (read and execute), Code (read and write))
 * Make sure that you copy the token that has been generated!!!!
 
-###Install a local build agent on your Azure VM
+### Install a local build agent on your Azure VM ###
 * Run C:\VSTSAgent\config.cmd from a command prompt with administrator privileges
 * Enter server URL: https://[....].visualstudio.com
 * Press enter for PAT a authentication type
@@ -93,10 +93,9 @@ To run an ASP.NET 4.X website you need the following things:
 *   Webdeploy installed
 
 ### Building the container with IIS, ASP.NET and Webdeploy ###
-* Get the docker base image (this image contains OS with IIS and ASP.NET)  ```docker pull microsoft/aspnet```
-* Get the file named Dockerfile (without extension) from [https://github.com/GlobalDevOpsBootcamp/challenge2](https://github.com/GlobalDevOpsBootcamp/challenge2) 
+* Get the file named [Dockerfile](./Dockerfile) (without extension)
 
-###Create publishing profile for web application
+### Create publishing profile for web application ###
 * In Visual Studio right click the MvcMusicStore project
 * Select Publish
 * Select Create new profile
@@ -107,7 +106,7 @@ To run an ASP.NET 4.X website you need the following things:
 * Save the profile
 * Select CustomProfile and click Publish
 
-###Create image and run localy###
+### Create image and run localy ###
 * Copy docker file to c:\temp
 * Copy fixAcls.ps1 to c:\temp from the MvcMusic store repo folder: Provisioning\Docker
 * Copy WebDeploy_2_10_amd64_en-US.msi to c:\temp from the MvcMusic store repo folder: Provisioning\Docker
@@ -265,11 +264,7 @@ When you run an ASP.NET 4.X website then you need the following things:
 
 Here are the steps you need to take to create a docker container that has all these required ingredients:
 
-Fist we need a basic operating system image from docker hub. For this you can run the following command from the command line:
-
-**docker pull microsoft/aspnet**
-
-now we have the image in our images gallery, you can check this with the following command:
+Fist we need a basic operating system image from docker hub. For this we already got the image for you (take long time) that you can check this with the following command:
 
 **docker images**
 
