@@ -49,8 +49,8 @@ When you succesfully completed the challenge, your webapplication is running in 
 |4| Make sure pipeline can deploy if the previous release failed |
 |5| Setup continuous deployments |
 |6| Add an additional environment |
-|7| Integrate Coded tests |
-|8| Setup and Use Kubernetes to run your container and let your Azure WebApp website use this. |
+|7| Integrate (Coded) UI tests |
+|8| Setup and Use Kubernetes on Azure Container Sevrice to run your container and let your Azure WebApp website use this. |
 
 ## Achievement \#1 - Configure a build agent ##
 
@@ -93,6 +93,11 @@ To run an ASP.NET 4.X website you need the following things:
 *   Webdeploy installed
 
 ### Building the container with IIS, ASP.NET and Webdeploy ###
+* Validate that the docker image microsoft/aspnet (this image contains OS with IIS and ASP.NET) is on your local machine by using the command   ```docker images```
+you should see in the list microsoft/aspnet.
+If it is not there you can get it by using the command ```docker pull micrsoft/aspnet```
+**Be careful here, if you run the pull command, then this can take an extensive amount of time (20 minutes +)**, so we pulled the image for you and it should already be on your machine.
+**We learned that the docker pull will pull a new image that is updated a day ago by MSFt and it will break the challange as described here. So please don't execute the pull command!!!**
 * Get the file named [Dockerfile](./Dockerfile) (without extension)
 
 ### Create publishing profile for web application ###
@@ -149,7 +154,12 @@ You can now perform your most craziest dance to celebrate that you are a Azure C
 
 ### Change task: Build solution **\*.sln (to publish a WebDeploy package on build)
 * Click on the Build solution **\*.sln task
-* Change the build to ```/p:DeployOnBuild=true;PublishProfile=CustomProfile /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.stagingDirectory)/Provisioning/Docker"```
+* Change the build to 
+```
+ /p:DeployOnBuild=true;PublishProfile=CustomProfile 
+ /p:WebPublishMethod=Package /p:PackageAsSingleFile=true 
+ /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.stagingDirectory)/Provisioning/Docker"
+ ```
 
 ### Add task: copy Dockerfile to staging directory
 * Add a Copy Files task below the Index Sources & Publish Symbols task

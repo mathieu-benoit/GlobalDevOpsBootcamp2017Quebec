@@ -28,9 +28,9 @@ When you succesfully completed the challenge, you can build and release an Azure
 |#| Achievement   |
 |---|---------------|
 |1| Add an Azure function application in the Azure portal and use this in your Web Application |
-|2| Configure a VSTS Build process |
-|3| Configure a VSTS Release pipeline |
-|4| Deploy the application |
+|2| Configure a VSTS Build and Release process |
+|3| Set up your Infrastructure as Code |
+|4| Deploy the enhanced Musicstore application |
 
 ## Achievement 1 Add an Azure function application in the Azure portal and use this in your Web Application##
 
@@ -104,11 +104,14 @@ log.Info($"Webhook was triggered!");
 
 You can now receive a text message at the mobile number you used for signing up at Twilio. Achievement unlocked
 
-## Achievement 2 - Configure a VSTS Build process ##
+## Achievement 2 - Configure a VSTS Build and Release process ##
 
-Create a VSTS build pipeline that will compile the Azure Function app and copy the build artefact for release. Use an ARM template to provision an Function app Website in Azure.
+Download the function app that you created in achievement 1 and structure them accordingly. ([see here](https://pgroene.wordpress.com/2017/01/27/use-vsts-to-deploy-functions-as-infrastructure-as-code/)) .
+
+Create a VSTS build pipeline that will "build" the Azure Function app (actually just package the file) and copy the build artifacts for release. Then create a release pipeline that uses the WebApp Deploy task to release the function app to Azure.
 
 Recommended reading:
+* https://pgroene.wordpress.com/2017/01/27/use-vsts-to-deploy-functions-as-infrastructure-as-code/
 * https://www.joshcarlisle.io/blog/2017/5/17/visual-studio-2017-tools-for-azure-functions-and-continuous-integration-with-vsts
 
 
@@ -119,23 +122,23 @@ Recommended reading:
 
 You can now build an Azure Function App from source code. Achievement unlocked
 
-## Achievement 3 - Configure a VSTS Release pipeline ##
+## Achievement 3 - Set up your Infrastructure as Code ##
 
-Create a new Release pipeline that will provision your Function App to Azure.  
+Create an ARM template to set up the infrastructure of this function. Later, set up the release pipeline that will provision your Function App to Azure including this infrastructure.
 
 ### Create a provisioning project ###
 
-* From the Azure Portal check your deployment of the Function app from Challenge 1. Download the ARM template for that deployment.
-* Add an Azure Resource Group project to the MVC Music Store solution. Include the files from the downloaded deployment. Tweak the files, parameters and template and try and provision the Function app from Visual Studio.
+* Get the ARM template from [Github Challenge 3](https://github.com/GlobalDevOpsBootcamp/challenge3) 
+* Include the downloaded project in the MVC Music Store solution. Tweak the files, parameters and template and try and provision the Function app from Visual Studio.
 
 ###  Provision the Function App from a release pipeline ###
 
-* Create a Release pipeline in VSTS and provision the ARM template from the previous step. Also, release the Function app build artifacts that was created.
+* Modify the Release pipeline in VSTS to include the provisioning of the ARM template from the previous step.
 * Test the release by removing and reprovisioning the Function App. Test the app after provisioning and deployment and show that it can still send a SMS text message.
 
 You can now provision and release an Azure Function App from your source code repository to production. Achievement unlocked.
 
-## Achievement 4 - Deploy the application ##
+## Achievement 4 - Deploy the enhanced Musicstore application ##
 
 Enhance the MVC Music store application to be able to send an HTTP trigger to the Function App upon a purchase.
 Build and release the entire application and order items from the store. Verify that the complete application functions as intended.
