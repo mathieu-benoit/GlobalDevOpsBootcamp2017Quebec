@@ -1,7 +1,8 @@
 # DevOps Challenge \#3 #
-In this challenge, you will create a new Azure Serverless Function, and make this a part of your application. The function should take care of sending a Mail or SMS (look at Twilio) confirmation after you have placed an order. First you will write a simple Azure Function that you will expose publicly. Then you will create an ARM template to create the neccessary resources and publish the function from the pipeline. Update your website or service (or both) to use this Azure Function and publish the update with the pipelines.
 
-When you succesfully completed the challenge, you can build and release an Azure Function App as part of the total solution.
+In this challenge, you will create a new Azure Serverless Function, and make this a part of your application. The function should take care of sending a Mail or SMS (look at Twilio) confirmation after you have placed an order. First you will write a simple Azure Function that you will expose publicly. Then you will create an ARM template to create the necessary resources and publish the function from the pipeline. Update your website or service (or both) to use this Azure Function and publish the update with the pipelines.
+
+When you successfully completed the challenge, you can build and release an Azure Function App as part of the total solution.
 
 ## Content ##
 * [Pre-requisites](#pre-requisites)
@@ -12,11 +13,11 @@ When you succesfully completed the challenge, you can build and release an Azure
 
 ## Pre-requisites ##
 
-*   Azure Subscription
-*   Team Project for venue with git repo per challenge team; VSTS account per participant
-*   Participants need administrator role on the Default Agent Pool (to be able to install a local build agent)
-*   Participants need administratir rights to add new service end-points in VSTS 
-*   Azure Database for ASP.NET Music Store (created in Challenge 1)
+* Azure Subscription
+* Team Project for venue with git repo per challenge team; VSTS account per participant
+* Participants need administrator role on the Default Agent Pool (to be able to install a local build agent)
+* Participants need administrator rights to add new service end-points in VSTS 
+* Azure Database for ASP.NET Music Store (created in Challenge 1)
 * [optional for bonus challenge] [Visual Studio 2017 (version 15.3) Preview](https://www.visualstudio.com/vs/preview/)
 * [optional for bonus challenge] Visual Studio 2017 - Tools for Azure functions (Extensions & Updates)
 
@@ -27,84 +28,35 @@ When you succesfully completed the challenge, you can build and release an Azure
 ## Achievements ##
 |#| Achievement   |
 |---|---------------|
-|1| Add an Azure function application in the Azure portal and use this in your Web Application |
+|1| Add an Azure function application in the Azure portal |
 |2| Configure a VSTS Build and Release process |
 |3| Set up your Infrastructure as Code |
 |4| Deploy the enhanced Musicstore application |
 
-## Achievement 1 Add an Azure function application in the Azure portal and use this in your Web Application##
+## Bonus Goals ##
+|#| Bonus Goal   |
+|---|---------------|
+|1| Create a Visual Studio Functions App project |
+|2| Incorporate unit tests |
+|3| Build & Release Visual Studio Function project with VSTS |
 
-* Create a Twilio Test Account for sending SMS. [Create an account here](https://www.twilio.com/sms) 
+## Achievement #1 - Add an Azure function application in the Azure portal ##
+
+* Create a Twilio Test Account for sending SMS. [Create an account here](https://www.twilio.com/sms)
 * Using the Azure portal, create an Azure Function to send an SMS message by using Twilio, or just send an Email
     * The function must be triggered with a HTTP trigger
 
-You can find the code for the Azure function on [Challenge3 on github](https://github.com/GlobalDevOpsBootcamp/challenge3/SendSMSAzureFunction) 
+You can find the code for the Azure function on [Challenge3 on github](https://github.com/GlobalDevOpsBootcamp/challenge3/tree/master/SendSMSAzureFunction)
 
 * Test the function, by sending a POST message with the following body:
-```
+
+```json
 {
     "message": "Hello, World!"
 }
 ```
 
-## Achievement 1 Add an Azure function application ##
-
-Add an Azure Functions application to the solution of the MVCMusicStore application.
-Next, add a function to send SMS messages to the project. The function must be activated by an HTTP trigger.
-
-Make sure you have Visual Studio 2017 (version 15.3 or later) installed and that the extension "Azure Function Tools for Visual Studio 2017" is added.
-
-Learn about Azure Function apps here:
-* https://blogs.msdn.microsoft.com/webdev/2017/05/10/azure-function-tools-for-visual-studio-2017
-
-### Implement Function app ###
-* Create a Twilio test account
-* Manage the NuGet packages for the new project and install the Twilio REST API Helper Library package.
-* Add appropriate using statements to the Azure Function C# file
-* Use the code fragment below to implement a HTTP triggered function. 
-
-```
-log.Info($"Webhook was triggered!");
-
-    string jsonContent = await req.Content.ReadAsStringAsync();
-    dynamic data = JsonConvert.DeserializeObject(jsonContent);
-
-    if (data.message == null)
-    {
-        return req.CreateResponse(HttpStatusCode.BadRequest, new
-        {
-            error = "Please pass message properties in the input object"
-        });
-    }
-
-    string accountSid = "<YourSidHere>";
-    string authToken = "<YourOAuthTokenHere>";
-
-    TwilioClient.Init(accountSid, authToken);
-
-    // Send a new outgoing SMS by POSTing to the Messages resource
-    MessageResource.Create(
-        from: new PhoneNumber("+3197001234567"), // TODO: Replace
-        to: new PhoneNumber("+31622334455"), // TODO: Replace
-        body: $"{data.message}");
-
-    return req.CreateResponse(HttpStatusCode.OK, new
-    {
-        greeting = $"Message Sent"
-    });
-
-```
-* Publish the function app to Azure.
-* Test the function, by sending a POST message with the following body:
-```
-{
-    "message": "Hello, World!"
-}
-```
-
-You can now receive a text message at the mobile number you used for signing up at Twilio. Achievement unlocked
-
-## Achievement 2 - Configure a VSTS Build and Release process ##
+## Achievement #2 - Configure a VSTS Build and Release process ##
 
 Download the function app that you created in achievement 1 and structure them accordingly. ([see here](https://pgroene.wordpress.com/2017/01/27/use-vsts-to-deploy-functions-as-infrastructure-as-code/)) .
 
@@ -114,17 +66,14 @@ Recommended reading:
 * https://pgroene.wordpress.com/2017/01/27/use-vsts-to-deploy-functions-as-infrastructure-as-code/
 * https://www.joshcarlisle.io/blog/2017/5/17/visual-studio-2017-tools-for-azure-functions-and-continuous-integration-with-vsts
 
-
 ### Create a VSTS build pipeline
 
 * In the VSTS portal use your existing pipeline from challenge 1 or 2. If you have not completed those challenges, create a new Build pipeline.
 * Verify that the build artefacts from the Azure Function App are included in the build output.
 
-You can now build an Azure Function App from source code. Achievement unlocked
+## Achievement #3 - Set up your Infrastructure as Code ##
 
-## Achievement 3 - Set up your Infrastructure as Code ##
-
-Create an ARM template to set up the infrastructure of this function. Later, set up the release pipeline that will provision your Function App to Azure including this infrastructure.
+Create n ARM template to set up the infrastructure of this function. Later, set up the release pipeline that will provision your Function App to Azure including this infrastructure.
 
 ### Create a provisioning project ###
 
@@ -133,15 +82,21 @@ Create an ARM template to set up the infrastructure of this function. Later, set
 
 ###  Provision the Function App from a release pipeline ###
 
-* Modify the Release pipeline in VSTS to include the provisioning of the ARM template from the previous step.
+* Modify the Release pipeline in VSTS to include the provisioning of the ARM template from the previous step. 
 * Test the release by removing and reprovisioning the Function App. Test the app after provisioning and deployment and show that it can still send a SMS text message.
 
 You can now provision and release an Azure Function App from your source code repository to production. Achievement unlocked.
 
-## Achievement 4 - Deploy the enhanced Musicstore application ##
+Recommended reading:
+* https://pgroene.wordpress.com/2017/01/27/use-vsts-to-deploy-functions-as-infrastructure-as-code/
+* https://www.joshcarlisle.io/blog/2017/5/17/visual-studio-2017-tools-for-azure-functions-and-continuous-integration-with-vsts
+
+## Achievement #4 - Deploy the enhanced Musicstore application ##
 
 Enhance the MVC Music store application to be able to send an HTTP trigger to the Function App upon a purchase.
 Build and release the entire application and order items from the store. Verify that the complete application functions as intended.
+
+Use the ShoppingCart.cs file from the GitHub repo [https://github.com/GlobalDevOpsBootcamp/challenge3/MVCMusicStoreEnhancee](https://github.com/GlobalDevOpsBootcamp/challenge3/tree/master/MVCMusicStoreEnhance)
 
 ### Enhance MVCMusicStore application
 
@@ -168,10 +123,9 @@ private const string FunctionURL = "https://musicstorefunctionapp.azurewebsites.
 ```
 
 * Find the CreateOrder method and include a call to the SendSMSMessage right after the invocation of EmptyCart().
-```
+
+```csharp
 SendSMSMessage(order.FirstName, order.LastName, order.Total, order.OrderDate);
 ```
 * Run your application locally and check whether a completed order will trigger the Function App.
 * Make any required adjustments to your build and release pipelines to deploy the new MVC Music Store application.
-
-You can now deploy the entire application including a Function App. Achievement unlocked.
