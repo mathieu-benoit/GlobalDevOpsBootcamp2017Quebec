@@ -120,10 +120,10 @@ If it is not there you can get it by using the command ```docker pull micrsoft/a
 ```
     docker build . -t mycontainerizedwebsite
     docker run -p 80:80 -d --name mvcmusicstore mycontainerizedwebsite
-    docker inspect --format '{{ .NetworkSettings.Networks.nat.IPAddress }}' mvcmusicstore
+    docker inspect --format '{{.NetworkSettings.Networks.nat.IPAddress}}' mvcmusicstore
 
 ```
-* Use the returned IP address to navigate to the website in your browser
+* Use the returned IP address to navigate to the website in your browser : http://[IP_Adress]/MvcMusicStore_deploy
 * To stop the container
 ```
     docker stop mvcmusicstore
