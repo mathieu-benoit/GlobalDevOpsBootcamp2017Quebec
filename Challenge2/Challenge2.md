@@ -112,7 +112,8 @@ If it is not there you can get it by using the command ```docker pull micrsoft/a
 * Select CustomProfile and click Publish
 
 ### Create image and run localy ###
-* Copy docker file to c:\temp
+* Copy docker file to c:\temp-docker
+    * Rk: make sure this folder is empty (no files/sub-folders).
 * Copy fixAcls.ps1 to c:\temp from the MvcMusic store repo folder: Provisioning\Docker
 * Copy WebDeploy_2_10_amd64_en-US.msi to c:\temp from the MvcMusic store repo folder: Provisioning\Docker
 * Open PowerShell command prompt and execute:
@@ -147,8 +148,7 @@ You can now perform your most craziest dance to celebrate that you are a Azure C
 
 ## Achievement \#4 - Create a build definition for your containerized application ##
 * Navigate to your VSTS environment and select Builds
-* Create a new Build
-* Select Visual Studio template
+* Duplicate the Build Definition from Challenge 1
 * Select the right git repository and branch (the venue repo for your team) in the Get Sources step of your Build process
 * Remove the last two tasks from the process (Copy Files and Publish Build Artifacts)
 

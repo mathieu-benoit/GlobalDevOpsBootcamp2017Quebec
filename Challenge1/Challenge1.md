@@ -207,11 +207,13 @@ Here are some of the things the release process for Music store to Azure PaaS sh
 
     ![](./img/create-release-definition4.png)
 
-4. Next we need to connect the release pipeline to Azure in order to deploy our web to the Azure resource group. Select the Deploy Azure App Service task and select the Azure subscription assigned to you. The service connection should already have been created as a pre-requisite to the challenge (see [DevOpsChallenge-CreateAzureSubscription.md](../DevOpsChallenge-CreateAzureSubscription.md) for instructions).
+4. Next we need to connect the release pipeline to Azure in order to deploy our web to the Azure resource group. Select the Deploy Azure App Service task and select the Azure subscription assigned to you. The service connection should already have been created as a pre-requisite to the challenge.
 
     Select the app service created earlier and browse to the Web Deploy package from the build artifact.
 
     ![](./img/create-azure-service-connection.png)
+
+Note: make sure you have selected the correct agent under the "Run on agent" hyperlink.
 
 ## Achievement \#6 - Deploy the application ##
 Now you should be ready to deploy your application using CI/CD for the first time. Make a small code change, commit it and look at the change go through the build and deploy process.
