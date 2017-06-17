@@ -148,9 +148,7 @@ You can now perform your most craziest dance to celebrate that you are a Azure C
 
 ## Achievement \#4 - Create a build definition for your containerized application ##
 * Navigate to your VSTS environment and select Builds
-* Duplicate the Build Definition from Challenge 1
-* Select the right git repository and branch (the venue repo for your team) in the Get Sources step of your Build process
-* Remove the last two tasks from the process (Copy Files and Publish Build Artifacts)
+* Duplicate the Build Definition from Challenge 1 (from the Build list, click on '...' and then choose "Clone")
 
 ### Change task: Build solution **\*.sln (to publish a WebDeploy package on build)
 * Click on the Build solution **\*.sln task
