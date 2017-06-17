@@ -1,8 +1,10 @@
 # Global DevOps Bootcamp - DevOps Challenges #
 
-This repository is a customization of the default one provided by the [Global DevOps Bootcamp](http://globaldevopsbootcamp.com/) for the local run in Quebec city, Canada. Our two main local sponsors there are [Cofomo](https://www.cofomo.com) and the [Communaute Microsoft Azure Quebec](https://www.meetup.com/azureQC/).
+This repository is a customization of the default one provided by the [Global DevOps Bootcamp](http://globaldevopsbootcamp.com/) for the local run in Quebec city, Canada. Our two main local sponsors are [Cofomo](https://www.cofomo.com) and the [Communaute Microsoft Azure Quebec](https://www.meetup.com/azureQC/).
 
-Remark: mainly, we took the "extended/step-by-step" version and we removed the concept of teams and scores. The local organizers thought this more efficient this way.
+The presentation we run could be found here: [GDBC Quebec Keynote 2017-06-17](./GDBC-Quebec-Keynote-06-17-2017.pdf)
+
+Remark about this repository for the challenges: mainly, we took the "extended/step-by-step" version and we removed the concept of teams and scores. The local organizers thought this more efficient this way.
 
 ## Context ##
 You are part of a DevOps team within a Music Company called Musicamente. You currently have a website which is (to be quite frank) a bit monolithic. Your DevOps team has just visited a bootcamp and is inspired and responsible for moving the monolithic website to a higher level. 
