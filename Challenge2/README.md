@@ -50,7 +50,7 @@ When you succesfully completed the challenge, your webapplication is running in 
 ## Getting started ##
 * [Verify the Docker installation and explore the application](https://docs.docker.com/docker-for-windows/#check-versions-of-docker-engine-compose-and-machine)
 * Clone the started code from [https://github.com/GlobalDevOpsBootcamp/challenge1](https://github.com/GlobalDevOpsBootcamp/challenge1) to your VSTS project as described in challenge1
-* Download for challenge 2: [Dockerfile](./Dockerfile) + [associated Provisioning/docker folder](./Provisioning/Docker) and nested files.
+* Download for challenge 2: [Dockerfile](./Dockerfile) + [associated provisioning-docker folder](./provisioning-docker) and nested files.
 
 ## Achievement \#1 - Configure a build agent ##
 
@@ -106,16 +106,16 @@ If it is not there you can get it by using the command ```docker pull micrsoft/a
 * Select Create new profile
 * Select IIS, FTP, etc. --> OK
 * Select Webdeploy package as Publish method
-* Package location c:\temp\MvcMusicStore.zip
+* Package location c:\temp-docker\MvcMusicStore.zip
 * Sitename Default Web Site
 * Save the profile
 * Select CustomProfile and click Publish
 
 ### Create image and run localy ###
 * Copy docker file to c:\temp-docker
-    * Rk: make sure this folder is empty (no files/sub-folders).
-* Copy fixAcls.ps1 to c:\temp from the MvcMusic store repo folder: Provisioning\Docker
-* Copy WebDeploy_2_10_amd64_en-US.msi to c:\temp from the MvcMusic store repo folder: Provisioning\Docker
+    * Rk: make sure this folder is empty (no files/sub-folders - it could take longer time for docker to build then).
+* Copy fixAcls.ps1 to c:\temp-docker from the MvcMusic store repo folder: provisioning-docker
+* Copy WebDeploy_2_10_amd64_en-US.msi to c:\temp-docker from the MvcMusic store repo folder: provisioning-docker
 * Open PowerShell command prompt and execute:
 
 ```
@@ -124,7 +124,7 @@ If it is not there you can get it by using the command ```docker pull micrsoft/a
     docker inspect --format '{{.NetworkSettings.Networks.nat.IPAddress}}' mvcmusicstore
 
 ```
-* Use the returned IP address to navigate to the website in your browser : http://[IP_Adress]/MvcMusicStore_deploy
+* Use the returned IP address to navigate to the website in your browser : http://[IP_Adress] or http://[IP_Adress]/MvcMusicStore_deploy
 * To stop the container
 ```
     docker stop mvcmusicstore
@@ -156,19 +156,14 @@ You can now perform your most craziest dance to celebrate that you are a Azure C
 ```
  /p:DeployOnBuild=true;PublishProfile=CustomProfile 
  /p:WebPublishMethod=Package /p:PackageAsSingleFile=true 
- /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.stagingDirectory)/Provisioning/Docker"
+ /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.stagingDirectory)/provisioning-docker"
  ```
 
-### Add task: copy Dockerfile to staging directory
+### Add task: copy docker assets to staging directory
 * Add a Copy Files task below the Index Sources & Publish Symbols task
-* Change Contents to ```Dockerfile```
-* Change Target Folder to ```$(build.stagingDirectory)/Provisioning/Docker```
-
-### Add task: copy additional Files to staging directory
-* Add another Copy Files task below the first Copy Files task
-* Change source folder to ```Provisioning/docker```
+* Change source folder to ```provisioning-docker```
 * Change contents to ```**```
-* Change target folder to ```$(build.stagingDirectory)/Provisioning/Docker```
+* Change target folder to ```$(build.stagingDirectory)/provisioning-docker```
 
 ### Create ImageName variable
 * Navigate to the Variables tab
@@ -178,8 +173,8 @@ You can now perform your most craziest dance to celebrate that you are a Azure C
 ### Add task: Build an image
 * Add a Docker task (the one with the whale icon)
 * Change action to ```Build an image```
-* Change Docker File to ```$(build.stagingDirectory)/Provisioning/Docker/Dockerfile```
-* Change Build Context to ```$(build.stagingDirectory)/Provisioning/Docker```
+* Change Docker File to ```$(build.stagingDirectory)/provisioning-docker/Dockerfile```
+* Change Build Context to ```$(build.stagingDirectory)/provisioning-docker```
 * Change Image Name to ```$(ImageName)```
 * Check the Include Latest Tag checkbox
 
@@ -388,7 +383,7 @@ next you can setup any database connections if you have any, in my case I have n
 
 [![image](https://i2.wp.com/fluentbytes.com/wp-content/uploads/2016/09/image_thumb-5.png?resize=676%2C533 "image")](https://i0.wp.com/fluentbytes.com/wp-content/uploads/2016/09/image-5.png)
 
-next, click publish and you will find the resulting deployment package and accompanying deployment files in the c:\temp folder
+next, click publish and you will find the resulting deployment package and accompanying deployment files in the c:\temp-docker folder
 
 [![image](https://i0.wp.com/fluentbytes.com/wp-content/uploads/2016/09/image_thumb-6.png?resize=676%2C136 "image")](https://i0.wp.com/fluentbytes.com/wp-content/uploads/2016/09/image-6.png)
 
