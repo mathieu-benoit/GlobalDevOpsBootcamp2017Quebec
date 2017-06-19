@@ -1,6 +1,6 @@
 # Global DevOps Bootcamp - DevOps Challenges #
 
-This repository is a customization of the default one provided by the [Global DevOps Bootcamp](http://globaldevopsbootcamp.com/) for the local run in Quebec city, Canada. Our two main local sponsors are [Cofomo](https://www.cofomo.com) and the [Communaute Microsoft Azure Quebec](https://www.meetup.com/azureQC/).
+This repository is a customization of the default one provided by the [Global DevOps Bootcamp](http://globaldevopsbootcamp.com/) for the local run in Quebec city, Canada. Our two main local sponsors was [Cofomo](https://www.cofomo.com) and the [Communaute Microsoft Azure Quebec](https://www.meetup.com/azureQC/).
 
 The presentation we run could be found here: [GDBC Quebec Keynote 2017-06-17](./GDBC-Quebec-Keynote-06-17-2017.pdf)
 

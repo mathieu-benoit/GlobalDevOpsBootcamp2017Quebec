@@ -44,7 +44,7 @@ In this challenge, you will move the current monolith application towards the cl
 In this first excercise you will create a repo for the application code.
 
 1. Go to [https://github.com/GlobalDevOpsBootcamp/challenge1](https://github.com/GlobalDevOpsBootcamp/challenge1) and get the Git clone URL.
-2. Go to [https://globaldevopsbootcamp.visualstudio.com/](https://globaldevopsbootcamp.visualstudio.com/) and connect to your project using the account provided by your organizer.
+2. Go to your VSTS account website https://[....].visualstudio.com and connect to your project using the account provided by your organizer.
 3. Go to the Code hub and import the Git repo
 
 ![](./img/import-repo.png)
@@ -114,7 +114,7 @@ More information about personal access tokens:
     ```
 **Note**: check the version of the file since it may have changed since this text was written.
 
-5. Configure the agent. Provide the **agent queue** created earlier, the account name **https://globaldevopsbootcamp.visualstudio.com** and 
+5. Configure the agent. Provide the **agent queue** created earlier, the account name **https://[....].visualstudio.com** and 
 use the **PAT** from the previous step.
 
     ![](./img/config-agent.png)
