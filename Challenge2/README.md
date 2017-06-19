@@ -50,7 +50,7 @@ When you succesfully completed the challenge, your webapplication is running in 
 ## Getting started ##
 * [Verify the Docker installation and explore the application](https://docs.docker.com/docker-for-windows/#check-versions-of-docker-engine-compose-and-machine)
 * Clone the started code from [https://github.com/GlobalDevOpsBootcamp/challenge1](https://github.com/GlobalDevOpsBootcamp/challenge1) to your VSTS project as described in challenge1
-* Download for challenge 2: [Dockerfile](./Dockerfile) + [associated provisioning-docker folder](./provisioning-docker) and nested files.
+* Download for challenge 2 [associated provisioning-docker folder](./provisioning-docker) and nested files.
 
 ## Achievement \#1 - Configure a build agent ##
 
@@ -98,7 +98,7 @@ you should see in the list microsoft/aspnet.
 If it is not there you can get it by using the command ```docker pull micrsoft/aspnet```
 **Be careful here, if you run the pull command, then this can take an extensive amount of time (20 minutes +)**, so we pulled the image for you and it should already be on your machine.
 **We learned that the docker pull will pull a new image that is updated a day ago by MSFt and it will break the challange as described here. So please don't execute the pull command!!!**
-* Get the file named [Dockerfile](./Dockerfile) (without extension)
+* Get the file named [Dockerfile](./provisioning-docker/Dockerfile) (without extension)
 
 ### Create publishing profile for web application ###
 * In Visual Studio right click the MvcMusicStore project
