@@ -4,6 +4,8 @@ This repository is a customization of the default one provided by the [Global De
 
 The presentation we run could be found here: [GDBC Quebec Keynote 2017-06-17](./GDBC-Quebec-Keynote-06-17-2017.pdf)
 
+Check out this [blog](https://storify.com/jaspergilhuis/global-devops-bootcamp/) to see how the things were running all around the world. What an experience!
+
 Remark about this repository for the challenges: mainly, we took the "extended/step-by-step" version and we removed the concept of teams and scores. The local organizers thought this more efficient this way.
 
 ## Context ##
@@ -15,7 +17,7 @@ Musicamente wants to be able to deliver new features faster, with zero-downtime 
 ## Challenge \#1 - Moving to the cloud ##
 Musicamente currently hosts their application on-premises. They face all kinds of issues with performance, availability and support. Together with the architect the decision has been made to move to the Azure cloud.
 
-See details about the [Challenge 1](./Challenge1/Challenge1.md)
+See details about the [Challenge 1](./Challenge1/Challenge1.md).
 
 ## Challenge \#2 - Moving to containers ##
 The management of Musicamente has just visited a Gartner conference. They learned about cloud tehcnology and came to the conclusion that running a website on PaaS (Azure WebApp) might result in a vendor lock-in. For the website they want to be able to be cloud-agnostic and switch between different clouds or even back to on-premises. 
@@ -26,7 +28,7 @@ In this challenge, you will move the web site to a Docker container. After you h
 
 When you succesfully completed the challenge, your Azure Website runs in a Docker container on a cluster, that uses SQL Azure.
 
-See details about the [Challenge 2](./Challenge2/Challenge2.md)
+See details about the [Challenge 2](./Challenge2/Challenge2.md).
 
 ## Challenge \#3 - Moving to serverless ##
 Musicamente wants to make the User Experience better by sending SMS verification after checking out the shopping cart. At this moment there is no capacity of hsoting a service like this in-house. Important requirement from the business is that they only want to pay for this feature if it is really used. 
@@ -35,4 +37,4 @@ After some investigation, an Azure Function can do the trick to fulfill this req
 
 In this challenge, you will create a new Azure Serverless Function, and make this a part of your application. The function should take care of sending a Mail or SMS (look at Twilio) confirmation after you have placed an order. First you will write a simple Azure Function that you will expose publicly. Then you will create an ARM template to create the neccessary resources and publish the function from the pipeline. Update your website or service (or both) to use this Azure Function and publish the update with the pipelines.
 
-See details about the [Challenge 3](./Challenge3/Challenge3.md)
+See details about the [Challenge 3](./Challenge3/Challenge3.md).
