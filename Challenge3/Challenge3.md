@@ -5,25 +5,11 @@ In this challenge, you will create a new Azure Serverless Function, and make thi
 When you successfully completed the challenge, you can build and release an Azure Function App as part of the total solution.
 
 ## Content ##
-* [Pre-requisites](#pre-requisites)
-* [Getting started](#getting-started)
 * [Achievements](#achievements)
 * [Bonus Goals](#bonus-goals)
+* [Pre-requisites](#pre-requisites)
+* [Getting started](#getting-started)
 * [Resources](#resources)
-
-## Pre-requisites ##
-
-* Azure Subscription
-* Team Project for venue with git repo per challenge team; VSTS account per participant
-* Participants need administrator role on the Default Agent Pool (to be able to install a local build agent)
-* Participants need administrator rights to add new service end-points in VSTS 
-* Azure Database for ASP.NET Music Store (created in Challenge 1)
-* [optional for bonus challenge] [Visual Studio 2017 (version 15.3) Preview](https://www.visualstudio.com/vs/preview/)
-* [optional for bonus challenge] Visual Studio 2017 - Tools for Azure functions (Extensions & Updates)
-
-## Getting started ##
-* Clone the ASP.NET MVC Music Store application from GitHub by cloning [https://github.com/GlobalDevOpsBootcamp/challenge1](https://github.com/GlobalDevOpsBootcamp/challenge1) to your VSTS project as described in challenge1. Or use the current finished solution from either challenge1 or challenge2
-* Clone or download the files for challenge 3 from [https://github.com/GlobalDevOpsBootcamp/challenge3](https://github.com/GlobalDevOpsBootcamp/challenge3)
 
 ## Achievements ##
 |#| Achievement   |
@@ -39,6 +25,20 @@ When you successfully completed the challenge, you can build and release an Azur
 |1| Create a Visual Studio Functions App project |
 |2| Incorporate unit tests |
 |3| Build & Release Visual Studio Function project with VSTS |
+
+## Pre-requisites ##
+
+* Azure Subscription
+* Team Project for venue with git repo per challenge team; VSTS account per participant
+* Participants need administrator role on the Default Agent Pool (to be able to install a local build agent)
+* Participants need administrator rights to add new service end-points in VSTS 
+* Azure Database for ASP.NET Music Store (created in Challenge 1)
+* [optional for bonus challenge] [Visual Studio 2017 (version 15.3) Preview](https://www.visualstudio.com/vs/preview/)
+* [optional for bonus challenge] Visual Studio 2017 - Tools for Azure functions (Extensions & Updates)
+
+## Getting started ##
+* Clone the ASP.NET MVC Music Store application from GitHub by cloning [https://github.com/GlobalDevOpsBootcamp/challenge1](https://github.com/GlobalDevOpsBootcamp/challenge1) to your VSTS project as described in challenge1. Or use the current finished solution from either challenge1 or challenge2
+* Clone or download the files for challenge 3 from [https://github.com/GlobalDevOpsBootcamp/challenge3](https://github.com/GlobalDevOpsBootcamp/challenge3)
 
 ## Achievement #1 - Add an Azure function application in the Azure portal ##
 

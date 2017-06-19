@@ -8,28 +8,11 @@ Finally you will publish the container to an already created Azure Container Ser
 When you succesfully completed the challenge, your webapplication is running in a Docker container on a cluster.
 
 ## Content ##
-* [Pre-requisites](#pre-requisites)
-* [Getting started](#getting-started)
 * [Achievements](#achievements)
 * [Bonus Goals](#bonus-goals)
+* [Pre-requisites](#pre-requisites)
+* [Getting started](#getting-started)
 * [Resources](#resources)
-
-## Pre-requisites ##
-*   Pipeline per team
-*   Visual Studio 2017 Enterprise (with the Coded UI test component)
-*   Docker for Windows [installed](https://download.docker.com/win/stable/InstallDocker.msi) 
-*   Azure Subscription
-*   Team Project for venue with git repo per challenge team; VSTS account per participant
-*   Participants need administrator role on the Default Agent Pool (to be able to install a local build agent)
-*   Participants need administrator rights to add new service end-points in VSTS 
-*   Azure Database for ASP.NET Music Store (created in Challenge 1)
-*   Docker Integration VSTS extension from the Azure Marketplace
-*   Base Docker image downloaded (already pulled for you) for achievements  ```docker pull microsoft/aspnet```
-
-## Getting started ##
-* [Verify the Docker installation and explore the application](https://docs.docker.com/docker-for-windows/#check-versions-of-docker-engine-compose-and-machine)
-* Clone the started code from [https://github.com/GlobalDevOpsBootcamp/challenge1](https://github.com/GlobalDevOpsBootcamp/challenge1) to your VSTS project as described in challenge1
-* Download for challenge 2: [Dockerfile](./Dockerfile) + [associated Provisioning/docker folder](./Provisioning/Docker) and nested files.  
 
 ## Achievements ##
 |#| Achievement   |
@@ -51,6 +34,23 @@ When you succesfully completed the challenge, your webapplication is running in 
 |6| Add an additional environment |
 |7| Integrate (Coded) UI tests |
 |8| Setup and Use Kubernetes on Azure Container Sevrice to run your container and let your Azure WebApp website use this. |
+
+## Pre-requisites ##
+*   Pipeline per team
+*   Visual Studio 2017 Enterprise (with the Coded UI test component)
+*   Docker for Windows [installed](https://download.docker.com/win/stable/InstallDocker.msi) 
+*   Azure Subscription
+*   Team Project for venue with git repo per challenge team; VSTS account per participant
+*   Participants need administrator role on the Default Agent Pool (to be able to install a local build agent)
+*   Participants need administrator rights to add new service end-points in VSTS 
+*   Azure Database for ASP.NET Music Store (created in Challenge 1)
+*   Docker Integration VSTS extension from the Azure Marketplace
+*   Base Docker image downloaded (already pulled for you) for achievements  ```docker pull microsoft/aspnet```
+
+## Getting started ##
+* [Verify the Docker installation and explore the application](https://docs.docker.com/docker-for-windows/#check-versions-of-docker-engine-compose-and-machine)
+* Clone the started code from [https://github.com/GlobalDevOpsBootcamp/challenge1](https://github.com/GlobalDevOpsBootcamp/challenge1) to your VSTS project as described in challenge1
+* Download for challenge 2: [Dockerfile](./Dockerfile) + [associated Provisioning/docker folder](./Provisioning/Docker) and nested files.
 
 ## Achievement \#1 - Configure a build agent ##
 

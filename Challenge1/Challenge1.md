@@ -2,11 +2,34 @@
 In this challenge, you will move the current monolith application towards the cloud. The local SQL Server should be replaced with SQL Azure, and the website should be converted to a PaaS Web App on Azure. The deployment of this website should be done with an automated build and release pipeline.
 
 ## Content ##
-* [Pre-requisites](#pre-requisites)
-* [Getting started](#getting-started)
 * [Achievements](#achievements)
 * [Bonus Goals](#bonus-goals)
+* [Pre-requisites](#pre-requisites)
+* [Getting started](#getting-started)
 * [Resources](#resources)
+
+## Achievements ## 
+
+| # | Achievement   |
+|---|---------------|
+|1| Configure a build agent|
+|2| Create the server environment|
+|3| Update the application to use the Azure SQL database |
+|4| Set up a build pipeline that builds the web application in to a MSDeploy package |
+|5| Set up a release pipeline that publishes the application to production |
+|6| Deploy a change in the website with Continuous Deployment |
+
+## Bonus goals ##
+
+| # | Bonus goal   |
+|---|---------------|
+|1| Add an extra stage to the release pipeline that uses a deployment slot|
+|2| Create a backlog with work and a task board with tasks|
+|3| Set up some usage counters with Application Insights in the website|
+|4| Create a feature toggle that "reveals" new functionality|
+|5| Use configuration to inject the connection string for the application during deployment|
+|6| Use an ARM template to configure and deploy the website and database in Azure|
+|7| Use approvers to create a controlled deployment pipeline|
 
 ## Pre-requisites ##
 * Build and release pipeline per team
@@ -45,29 +68,6 @@ In this first excercise you will create a repo for the application code.
     ![](./img/branches.png)
 
 **Note:** the repo will have a master branch but also a completed branch. If you get stuck you can peek in the completed branch and see if helps you move forward.
-
-## Achievements ## 
-
-| # | Achievement   |
-|---|---------------|
-|1| Configure a build agent|
-|2| Create the server environment|
-|3| Update the application to use the Azure SQL database |
-|4| Set up a build pipeline that builds the web application in to a MSDeploy package |
-|5| Set up a release pipeline that publishes the application to production |
-|6| Deploy a change in the website with Continuous Deployment |
-
-## Bonus goals ##
-
-| # | Bonus goal   |
-|---|---------------|
-|1| Add an extra stage to the release pipeline that uses a deployment slot|
-|2| Create a backlog with work and a task board with tasks|
-|3| Set up some usage counters with Application Insights in the website|
-|4| Create a feature toggle that "reveals" new functionality|
-|5| Use configuration to inject the connection string for the application during deployment|
-|6| Use an ARM template to configure and deploy the website and database in Azure|
-|7| Use approvers to create a controlled deployment pipeline|
 
 ## Achievement \#1 - Configure a build agent ##
 For this workshop we will use local build servers. In this step you will setup a local 
